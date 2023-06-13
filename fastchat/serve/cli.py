@@ -56,7 +56,7 @@ class RichChatIO(ChatIO):
         # TODO(suquark): multiline input has some issues. fix it later.
         prompt_input = self._prompt_session.prompt(
             completer=self._completer,
-            multiline=False,
+            multiline=True,
             auto_suggest=AutoSuggestFromHistory(),
             key_bindings=None,
         )
