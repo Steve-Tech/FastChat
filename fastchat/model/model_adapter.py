@@ -210,7 +210,9 @@ def load_model(
         # xpu_VISIBLE_DEVICES doesn't seem to work, so we set device manually
         if "xpu_VISIBLE_DEVICES" in os.environ:
             xpu_device = os.environ["xpu_VISIBLE_DEVICES"]
-            torch.xpu.set_device(int(xpu_device) if xpu_device.isdecimal() else xpu_device)
+            torch.xpu.set_device(
+                int(xpu_device) if xpu_device.isdecimal() else xpu_device
+            )
     else:
         raise ValueError(f"Invalid device: {device}")
 
